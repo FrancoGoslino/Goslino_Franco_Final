@@ -1,0 +1,17 @@
+{% extends "Blog/base.html" %}
+
+{% load static %}
+
+{% block main %}
+ <h1> Buzon de entrada: </h1>
+<ul>
+    {%  for mensaje in mensajes  %}
+    <li> Mensaje de: {{mensaje.email}} 
+        <br> 
+        {{ mensaje.mensaje }}
+        <br>
+        <a href="{% url 'mensaje-delete' mensaje.id %}">Borrar</a>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}

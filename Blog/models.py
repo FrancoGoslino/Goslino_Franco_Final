@@ -15,3 +15,8 @@ class Receta(models.Model):
     def __str__(self):
         return f"{self.id} - {self.nombre} - {self.propietario.id}"
 
+class Mensaje(models.Model):
+    mensaje = models.TextField(max_length=100)
+    email = models.EmailField()
+    creado_el = models.DateTimeField(auto_now_add=True) 
+    destinatario = models.ForeignKey(User, on_delete=models.CASCADE, related_name="mensajes")

@@ -70,6 +70,12 @@
             <a type="button" class="btn btn-outline-light" class="nav-link" href="{% url 'receta-create' %}">Subir receta</a>
           </li>
           <li class="nav-item">
+            <a type="button" class="btn btn-outline-light"class="nav-link active" href="{% url 'mensaje-create' %}">Enviar mensaje</a>
+          </li>
+          <li class="nav-item">
+            <a type="button" class="btn btn-outline-light"class="nav-link active" href="{% url 'mensaje-list' %}">Mi buzon</a>
+          </li>
+          <li class="nav-item">
             <a type="button" class="btn btn-outline-light"class="nav-link" href="{% url 'logout' %}">Logout</a>
           </li>
           {% else %}

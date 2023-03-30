@@ -1,0 +1,15 @@
+{% extends "Blog/base.html" %}
+
+{% load static %}
+
+{% block main %}
+<div class="alert alert-danger" role="alert">
+    ¿Está seguro que quiere borrar el mensaje de {{ mensaje.destinatario }}?
+</div>
+<form method="post">
+    {% csrf_token %}
+    <input class="btn btn-danger" type="submit" value="Borrar">
+    <a class="btn btn-primary" href="{% url 'mensaje-list' %}">Cancelar</a>
+</form>
+
+{% endblock %}
