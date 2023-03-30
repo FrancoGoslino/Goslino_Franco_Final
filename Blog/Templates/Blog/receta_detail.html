@@ -7,7 +7,9 @@
     <div class="col col-8" style="text-align: center;">
         <h3 class="mt-5">{{ object.nombre }}</h3>
         <p><img height="256px" src= "{{object.imagen.url}}"></p>
-        <p class="lead">{{ object.detalle}}</p>
+        <p class="lead"> Detalles de la receta: </p>
+        <p class="lead"> {{ object.detalle}}</p>
+        <p class="lead">Precio: ${{ object.precio}}</p>
         <p class="lead">Chef: {{ object.propietario}}</p>
     </div>
   </div>

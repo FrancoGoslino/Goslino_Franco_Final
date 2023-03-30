@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from Blog.views import index, RecetaList, RecetaCreate, RecetaDelete, RecetaUpdate, RecetaMineList, RecetaDetail, Login, Logout, SignUp
+from Blog.views import index, RecetaList, RecetaSearch, RecetaCreate, RecetaDelete, RecetaUpdate, RecetaMineList, RecetaDetail, Login, Logout, SignUp
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -28,6 +28,7 @@ urlpatterns = [
     path('receta/<pk>/update', RecetaUpdate.as_view(), name= 'receta-update'),
     path('receta/<pk>/delete', RecetaDelete.as_view(), name= 'receta-delete'),
     path('receta/create', RecetaCreate.as_view(), name= 'receta-create'),
+    path('receta/buscar', RecetaSearch.as_view(), name= 'receta-buscar'),
     path('receta/<pk>/detail', RecetaDetail.as_view(), name= 'receta-detail'),
     path('login', Login.as_view(), name= 'login'),
     path('logout', Logout.as_view(), name= 'logout'),

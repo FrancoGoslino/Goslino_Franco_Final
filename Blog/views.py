@@ -58,12 +58,12 @@ class RecetaCreate(LoginRequiredMixin, CreateView):
 
 class RecetaSearch(ListView):
     model = Receta
-    context_object_name = "recetas"
-
+    context_object_name = 'recetas' 
+    
     def get_queryset(self):
         criterio = self.request.GET.get("criterio")
-        result = Receta.objects.filter(nombre=criterio).all()
-        return result
+        resultado = Receta.objects.filter(nombre=criterio).all()
+        return resultado
 
 class Login(LoginView):
     next_page = reverse_lazy("receta-list")
