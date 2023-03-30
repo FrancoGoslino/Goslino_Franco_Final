@@ -1,0 +1,63 @@
+{% extends "Blog/base.html" %}
+
+{% load static %}
+
+{% block main %}
+<main>
+
+    <main>
+
+        <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            
+              
+                <div class="carousel-item active">
+                    <img src="{% static 'Blog/assets/mesa.jpg' %}">
+                  <div class="container">
+                    <div class="carousel-caption text-start">
+                      <h1>Comparti una mesa espectacular</h1>
+                      <p>Recetas familiares</p>
+                      <p><a class="btn btn-lg btn-primary" href="{% url 'receta-list' %}">Learn more</a></p>
+                    </div>
+                  </div>
+                </div>
+              
+            
+              
+              <div class="carousel-item">
+                <img src="{% static 'Blog/assets/pavo.jpg' %}">
+                <div class="container">
+                  <div class="carousel-caption">
+                    <h1>Pavo al horno</h1>
+                    <p>Pavo con especias al estilo Norte americáno</p>
+                    <p><a class="btn btn-lg btn-primary" href="{% url 'receta-list' %}">Learn more</a></p>
+                  </div>
+                </div>
+              </div>
+              
+            
+            
+            
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      
+      
+        <!-- Marketing messaging and featurettes
+        ================================================== -->
+        <!-- Wrap the rest of the page in another container to center all the content. -->
+      
+        <div class="container marketing">
+      
+  
+    
+  
+  </main>
+{% endblock %}

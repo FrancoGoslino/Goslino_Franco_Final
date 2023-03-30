@@ -1,0 +1,15 @@
+{% extends "Blog/base.html" %}
+
+{% load static %}
+
+{% block main %}
+<div class="d-flex justify-content-center">
+    <div class="col col-8" style="text-align: center;">
+        <h3 class="mt-5">{{ object.nombre }}</h3>
+        <p><img height="256px" src= "{{object.imagen.url}}"></p>
+        <p class="lead">{{ object.detalle}}</p>
+        <p class="lead">Chef: {{ object.propietario}}</p>
+    </div>
+  </div>
+
+{% endblock %}

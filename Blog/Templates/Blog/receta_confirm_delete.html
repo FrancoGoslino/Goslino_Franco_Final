@@ -1,0 +1,12 @@
+{% extends "Blog/base.html" %}
+
+{% load static %}
+
+{% block main %}
+<h1>¿Esta seguro de borrar la receta? Estaba deliciosa!</h1>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" value="Borrar">
+</form>
+{% endblock %}
