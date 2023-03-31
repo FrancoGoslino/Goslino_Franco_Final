@@ -29,6 +29,7 @@ Siempre usaremos el comando python manage.py runserver para correr nuestro servi
 9-LOGOUT- Desde aqui no des loguaremos de nuestro usuario.
 10-BUSCAR- Podremos fiultrar por cualquier letra o palabra clave para buscar recetas de nuestro gusto.
 112
+
 ##Funciones de la pagina web (invitado)
 1-HOME-Podremos ir a la pagina principal, donde encontraremos el carousel con las publicaciones mas destacadas por la comunidad
 2-RECETARIO-Esta seccion nos muestra todas las recetas publicadas por los usuarios
