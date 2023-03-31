@@ -12,6 +12,11 @@ Empezamos abriendo la consola y escribimos: git clone https://github.com/Rodrigo
 django-admin startproject Project
 python manage.py startapp Blog
 
+Deberemos hacer la migraciones necesarios para poder empezar a codear. Iremos usando los git add, commit y push para mantener un 
+work flow ordenado y prolijo.
+
+Siempre usaremos el comando python manage.py runserver para correr nuestro servidor y verificar que todo funcione correctamente
+
 ## Funciones de la pagina web (usuario logueado)
 1-PERFIL- En el logo podemos actualizar los datos de nuestro perfil
 2-ADMIN- Veremos el nombre del perfil que creo su usuario
