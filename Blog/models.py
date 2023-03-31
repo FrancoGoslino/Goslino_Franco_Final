@@ -20,3 +20,13 @@ class Mensaje(models.Model):
     email = models.EmailField()
     creado_el = models.DateTimeField(auto_now_add=True) 
     destinatario = models.ForeignKey(User, on_delete=models.CASCADE, related_name="mensajes")
+    
+
+class Perfil(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name="perfil")
+    avatar = models.ImageField(upload_to="avatares", null=True, blank=True)
+    redes_sociales = models.CharField(max_length=50)
+
+    @property
+    def avatar_url(self):
+        return self.avatar.url if self.avatar else ''

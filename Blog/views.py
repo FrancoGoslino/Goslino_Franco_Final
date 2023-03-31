@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from Blog.models import Receta, Mensaje
+from Blog.models import Receta, Mensaje, Perfil
 from django.urls import reverse_lazy
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from django.contrib.auth.views import LoginView, LogoutView
@@ -62,7 +62,7 @@ class RecetaSearch(ListView):
     
     def get_queryset(self):
         criterio = self.request.GET.get("criterio")
-        resultado = Receta.objects.filter(nombre=criterio).all()
+        resultado = Receta.objects.filter(nombre__icontains=criterio).all()
         return resultado
 
 class Login(LoginView):
@@ -101,3 +101,24 @@ class MensajeList(LoginRequiredMixin, ListView):
     def get_queryset(self):
         import pdb; pdb.set_trace
         return Mensaje.objects.filter(destinatario=self.request.user).all()
+    
+    
+ #-------PERFIL---------------------------------->
+    
+class ProfileCreate(LoginRequiredMixin, CreateView):
+    model = Perfil
+    success_url = reverse_lazy("receta-list")
+    fields = ['avatar','redes_sociales', 'user']
+
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super().form_valid(form)
+    
+class PerfilUpDate(UserPassesTestMixin, UpdateView):
+    model = Perfil
+    success_url = reverse_lazy('receta-list')
+    fields = ['avatar','redes_sociales', 'user']
+    
+    def test_func(self):
+        return Perfil.objects.filter(user=self.request.user).exists()
+    

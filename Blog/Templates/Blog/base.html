@@ -51,10 +51,18 @@
     
 <header>
   <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-    </span> <div class="container-fluid"> 
-      <a class="navbar-brand" type= href="https://getbootstrap.com/docs/5.0/examples/carousel/#">USER</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+    {% if user.perfil %}
+    <div class="container-fluid">
+      <a class="Header-link" href="{% url 'perfil-create' %}" data-hotkey="g d" aria-label="Homepage " data-turbo="false" data-analytics-event="{&quot;category&quot;:&quot;Header&quot;,&quot;action&quot;:&quot;go to dashboard&quot;,&quot;label&quot;:&quot;icon:logo&quot;}">
+        <svg xmlns="http://www.w3.org/2000/svg" width="60" height="40" viewBox="0 0 24 24"><script xmlns="" async="false" type="text/javascript" src="chrome-extension://fnjhmkhhmkbjkkabndcnnogagogbneec/in-page.js"/>
+          <path fill="white" d="M16 11c1.66 0 2.99-1.34 2.99-3s-1.33-3-2.99-3c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3s-1.33-3-2.99-3c-1.66 0-3 1.34-3 3s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5v2.5h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45v2.5h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/><a >
+        </svg>
+      </a>
+      
+    <li><a type="button" class="btn btn-outline-light" class="nav-link" href="{% url 'perfil-update' user.perfil.id %}">{{ user.username }}</a></li>
+    {% else %}
+    <li><a type="button" class="btn btn-outline-light" class="nav-link" href="{% url 'perfil-create' %}">Create user</a></li>
+    {% endif %}
       </button>
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav me-auto mb-2 mb-md-0">
@@ -66,6 +74,10 @@
             <a type="button" class="btn btn-outline-light"class="nav-link active" aria-current="page" href="{% url 'receta-list' %}">Recetario</a>
           </li>
           {% if user.is_authenticated %}
+          
+          <li class="nav-item">
+            <a type="button" class="btn btn-outline-light" class="nav-link" href="{% url 'receta-mine' %}">Mis recetas</a>
+          </li>
           <li class="nav-item">
             <a type="button" class="btn btn-outline-light" class="nav-link" href="{% url 'receta-create' %}">Subir receta</a>
           </li>
