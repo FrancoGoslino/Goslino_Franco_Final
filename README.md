@@ -1,4 +1,4 @@
-# ## # Recetas es una pagina web en progreso, donde se espera que se forme una comunidad de chefs de todo tipo y compartan su mismo gusto en comun
+Recetas es una pagina web en progreso, donde se espera que se forme una comunidad de chefs de todo tipo y compartan su mismo gusto en comun
 
 ## Inicio de Proyecto desde GitHub:
 Crear un nuevo repositorio en GitHub.
